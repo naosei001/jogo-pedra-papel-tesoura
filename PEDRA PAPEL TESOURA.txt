@@ -1,0 +1,42 @@
+import random
+
+
+def jogar():
+    print('VAMOS JOGAAARRR!!')
+    print()
+    print('Escolha sua opção!!!')
+    print("1 - Pedra")
+    print("2 - Papel")
+    print("3 - Tesoura")
+    print()
+    
+    escolhas = ["Pedra", "Papel", "Tesoura"]
+    
+    escolha_usuario = int(input('Digite o número correspondente à sua escolha: '))
+    if escolha_usuario < 1 or escolha_usuario > 3:
+        print('Escolha inválida. Por favor, digite 1, 2 ou 3.')
+        return
+        
+        
+    escolha_usuario = escolhas[escolha_usuario - 1]
+        
+    escolha_maquina = random.choice(escolhas)
+        
+    print(f'\nVocê escolheu: {escolha_usuario}')
+    print(f'A máquina escolheu: {escolha_maquina}')
+    
+    
+    if escolha_usuario == escolha_maquina:
+        print('Empate')
+        
+    elif (escolha_usuario == "Pedra" and escolha_maquina == "Tesoura") or \
+         (escolha_usuario == "Papel" and escolha_maquina == "Pedra") or \
+         (escolha_usuario == "Tesoura" and escolha_maquina == "Papel"):
+        print('VOCÊ GANHOOUUUU!!')
+    
+    else:
+        print('Você perdeu!!')
+
+        
+jogar()
+    
